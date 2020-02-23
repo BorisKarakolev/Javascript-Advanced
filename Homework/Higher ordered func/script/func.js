@@ -87,7 +87,7 @@ fetch('https://api.myjson.com/bins/1f70kq')
         
         console.table(students.filter(student => student.gender === `Male` && student.city !== `Skopje`));
         console.table(students.filter(student => student.gender === `Female` && student.age >= 18));
-        console.log(students.map(student => student.age).reduce((sum, age) => sum + age, 0));
+        console.log(students.map(student => student.age).reduce((sum, age) => sum + age, 0) / 2);
         console.table(students.filter(student => student.gender === 'Female' && student.lastName.slice(-1) === `a`));
     })
     .catch((error) => error)
