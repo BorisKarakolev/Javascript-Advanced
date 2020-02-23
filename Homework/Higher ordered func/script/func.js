@@ -80,10 +80,10 @@ fetch('https://api.myjson.com/bins/1f70kq')
         // console.table(students.filter(student => student.gender === 'Male' && student.averageGrade > 2 && student.firstName[0] === 'B').map(student => student.firstName));
 
         // Homework
-        console.table(students.filter(student => student.averageGrade === 1)
-        .map(student => `${student.firstName} ${student.lastName} is comming from ${student.city}, he is ${student.age} years old and he is ${student.averageGrade = 'failing'} the class`));
-        console.table(students.filter(student => student.averageGrade >= 2)
-        .map(student => `${student.firstName} ${student.lastName} is comming from ${student.city}, he is ${student.age} years old and he is ${student.averageGrade = 'passing'} the class`));
+        students.forEach(student => {
+            let grade = student.averageGrade <= 1 ? `failing` : `passing`;
+            console.log(`${student.firstName} ${student.lastName} is comming from ${student.city}, he is ${student.age} years old and he is ${grade} the class.`)
+        });
         
         console.table(students.filter(student => student.gender === `Male` && student.city !== `Skopje`).map(student => `${student.firstName} ${student.lastName}`));
         console.table(students.filter(student => student.gender === `Female` && student.age >= 18).map(student => `${student.firstName} ${student.lastName}`));
