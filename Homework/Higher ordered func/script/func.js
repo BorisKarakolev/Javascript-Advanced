@@ -85,10 +85,10 @@ fetch('https://api.myjson.com/bins/1f70kq')
             console.log(`${student.firstName} ${student.lastName} is comming from ${student.city}, he is ${student.age} years old and he is ${grade} the class.`)
         });
         
-        console.table(students.filter(student => student.gender === `Male` && student.city !== `Skopje`).map(student => `${student.firstName} ${student.lastName}`));
-        console.table(students.filter(student => student.gender === `Female` && student.age >= 18).map(student => `${student.firstName} ${student.lastName}`));
+        console.table(students.filter(student => student.gender === `Male` && student.city !== `Skopje`));
+        console.table(students.filter(student => student.gender === `Female` && student.age >= 18));
         console.log(students.map(student => student.age).reduce((sum, age) => sum + age, 0));
-        console.table(students.filter(student => student.gender === 'Female' && student.lastName.slice(-1) === `a`).map(student => `${student.firstName} ${student.lastName}`));
+        console.table(students.filter(student => student.gender === 'Female' && student.lastName.slice(-1) === `a`));
     })
     .catch((error) => error)
 
