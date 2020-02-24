@@ -26,6 +26,7 @@ let colors = ['red', 'blue', 'green', 'yellow', 'orange', 'purple'];
 
 
 addBtn.addEventListener('click', function () {
+    alert.innerHTML = ``;
     let titleInput = inputTitle.value;
     let priorityInput = inputPriority.value;
     let colorInput = inputColor.value;
@@ -35,23 +36,18 @@ addBtn.addEventListener('click', function () {
 
     if (titleInput === '' || priorityInput === '' || colorInput === '' || descriptionInput === '') {
         alert.innerHTML = `<h3>Please enter your inputs.</h3>`;
-        inputTitle.value = '';
-        inputPriority.value = '';
-        inputColor.value = '';
-        descipt.value = '';
-        return;
-    }
-
-    for (const color of colors) {
-        if (colorInput.toLowerCase() === color.toLowerCase()) {
-            remindersArr.push(newReminder);
-            inputTitle.value = '';
-            inputPriority.value = '';
-            inputColor.value = '';
-            descipt.value = '';
-            return;
+    } else {
+        for (const color of colors) {
+            if (colorInput.toLowerCase() === color.toLowerCase()) {
+                remindersArr.push(newReminder);
+                inputTitle.value = '';
+                inputPriority.value = '';
+                inputColor.value = '';
+                descipt.value = '';
+                return;
+            }
+            alert.innerHTML = `<h3>Please enter the valid color.</h3>`
         }
-        alert.innerHTML = `<h3>Please enter the valid color.</h3>`
     }
     inputTitle.value = '';
     inputPriority.value = '';
