@@ -47,8 +47,8 @@ function CodeStudent(academyName, studentId, firstName, lastName, age) {
     Object.setPrototypeOf(this, new Student(academyName, studentId, firstName, lastName, age))
     this.hasIndividualProject = false;
     this.hasGroupProject = false;
-    this.doProject = function(type) {
-        if(type === `individual`) {
+    this.doProject = function (type) {
+        if (type === `individual`) {
             console.log(`The student ${this.firstName} ${this.lastName} is working on the individual project.`)
             this.hasIndividualProject = true;
         } else if (type === `group`) {
@@ -65,7 +65,7 @@ console.log(studentC.studentAcademy());
 function NetworkStudent(academyPart, academyName, studentId, firstName, lastName, age) {
     Object.setPrototypeOf(this, new Student(academyName, studentId, firstName, lastName, age))
     this.partOfTheAcademy = academyPart;
-    this.attendCiscoExam = function() {
+    this.attendCiscoExam = function () {
         console.log(`The student ${this.firstName} is doing a cisco exam!`);
     }
 }
